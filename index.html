@@ -14,14 +14,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #5e5b5b;
+      background-image: url("assets/bg_img4.jpg");
     }
 
     .container {
       max-width: 800px;
-      background-color: #249cec;
+      background-color: #000000;
       border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.505);
       padding: 10px;
     }
 
@@ -30,11 +30,18 @@
       align-items: center;
       gap: 10px;
       padding: 10px;
+      color: white;
     }
 
     .profile-img {
       width: 180px;
       height: 190px;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 8px;
+    }
+
+    a {
+      color: #fefb56;
     }
 
     h1,
@@ -45,34 +52,30 @@
 
     h1 {
       font-size: 28px;
-      color: #333;
       margin-bottom: 10px;
     }
 
     h2 {
       font-size: 22px;
-      color: #ffffff;
-      margin-top: 20px;
+      margin-top: 5px;
       margin-bottom: 10px;
     }
 
     h3 {
       font-size: 18px;
-      color: #ffffff;
       margin-top: 15px;
       margin-bottom: 5px;
     }
 
     p {
       margin: 5px 0;
-      color: #ffffff;
     }
 
     .section {
       flex: 1;
-      background-color: #0A66C2;
+      background-color: #ffffff;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 7px 7px 10px rgba(218, 225, 16, 0.444);
       padding: 20px;
       margin: 10px;
     }
@@ -95,7 +98,7 @@
 
     .skillSection {
       flex: 1;
-      background-color: #0A66C2;
+      background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
@@ -103,17 +106,15 @@
     }
 
     .skillSection h2 {
-      color: #555;
+      color: #000000;
       margin-bottom: 10px;
       text-align: center;
-      color: #c9c2c2;
     }
 
     .skillSection ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
-      color: #ffffff;
     }
 
     .skillSection ul li {
@@ -122,7 +123,76 @@
 
     .section ul {
       margin-left: 20px;
-      color: #ffffff;
+    }
+
+    #snackbar {
+      visibility: hidden;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+    }
+
+    #snackbar.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -134,15 +204,24 @@
       <div>
         <h1>Ritik Pant</h1>
         <p>Backend Software Developer</p>
-        <p>Email: <a href="">pantritik2203@gmail.com</a></p>
-        <p>Phone: <a href="">+91 7837794207</a></p>
+        <p>Email:<button onclick="copy(this)" style="background-color: transparent; 
+        color: #fefb56; 
+          border-color: #000000;
+          border-style: solid; 
+          cursor: pointer">pantritik2203@gmail.com</button></p>
+        <p>Phone:<button onclick="copy(this)" style="background-color: transparent; 
+          color: #fefb56; 
+            border-color: #000000;
+            border-style: solid; 
+            cursor: pointer">+917837794207</button></p>
+
         <p><a href="https://www.linkedin.com/in/ritikpant/" target="_blank">Linkedin</a></p>
       </div>
     </div>
 
     <div class="section">
       <h2>About Me</h2>
-      <p>Highly motivated and results-driven backend Software Developer with almost 2 years of experience in product
+      <p>Highly motivated and results-driven backend Software Developer with 2.5 years of experience in Backend product
         development. Proficient in developing software using technologies including Javascript, Node.js, and MySql.
         Strong understanding of software development methodologies, including Agile and Scrum. Proven track record of
         delivering high-performance and scalable systems on time and within budget.</p>
@@ -227,6 +306,25 @@
       <p>Mukat Public School - April 2015 - March 2017</p>
     </div>
   </div>
+  <div id="snackbar">Copied to clipboard..</div>
+  <script>
+    function copy(that) {
+      showCopiedToast();
+      var inp = document.createElement('input');
+      document.body.appendChild(inp)
+      inp.value = that.textContent
+      inp.select();
+      document.execCommand('copy', false);
+      inp.remove();
+    }
+
+    function showCopiedToast() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    }
+  </script>
 </body>
+
 
 </html>
