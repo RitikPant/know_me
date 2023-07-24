@@ -1,0 +1,190 @@
+body {
+    font-family: Graphik;
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffee05f5;
+    background-image: url("../assets/bg_img4.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .container {
+    max-width: 800px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.505);
+    padding: 10px;
+  }
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+  }
+
+  .profile-img {
+    width: 180px;
+    height: 190px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    /* mix-blend-mode:color; */
+  }
+
+  a {
+    color: #fefb56;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  .section {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 7px 7px 10px rgba(218, 225, 16, 0.444);
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+  }
+
+  .skillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .skillSection {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .skillSection h2 {
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .skillSection ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skillSection ul li {
+    margin-bottom: 10px;
+  }
+
+  .section ul {
+    margin-left: 20px;
+  }
+
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #3e3e3e;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    bottom: 30px;
+    font-size: 17px;
+    opacity: 0.7;
+  }
+
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 30px;
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 30px;
+      opacity: 0.7;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 0.7;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 0.7;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
